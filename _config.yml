@@ -1,0 +1,12 @@
+# Site settings
+title: RichardCochrane
+email: screamer42@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Richard Cochrane CV
+production_url: http://richardcochrane.github.io
+baseurl: "" # the subpath of your site, e.g. /blog/
+
+# Build settings
+markdown: kramdown
+sass:
+    style: compressed

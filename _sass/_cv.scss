@@ -1,0 +1,49 @@
+body {
+  background: #444;
+  color: #53fffc;
+  padding: 20px;
+}
+
+section {
+  border: 2px solid #53fffc;
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  padding: 5px 10px;
+  vertical-align: top;
+  width: 40%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.timeline-container {
+  padding: 5px 10px;
+}
+
+.timeline {
+  background-color: #53fffc;
+  height: 5px;
+  overflow: visible;
+  position: relative;
+  width: 90%;
+  z-index: 10;
+
+  .big-milestone {
+    background-color: #53fffc;
+    border: 10px solid #53fffc;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    z-index: 20;
+  }
+
+  .small-milestone {
+    background-color: #53fffc;
+    height: 15px;
+    position: absolute;
+    top: -5px;
+    width: 2px;
+    z-index: 20;
+  }
+}

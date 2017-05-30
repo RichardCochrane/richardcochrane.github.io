@@ -6,6 +6,7 @@ body {
 
 section {
   border: 2px solid #53fffc;
+  box-sizing: border-box;
   display: inline-block;
   margin: 0 20px 20px 0;
   padding: 5px 10px;
@@ -21,29 +22,242 @@ section {
   padding: 5px 10px;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .timeline {
   background-color: #53fffc;
   height: 5px;
   overflow: visible;
   position: relative;
-  width: 90%;
+  width: 98%;
   z-index: 10;
 
-  .big-milestone {
-    background-color: #53fffc;
-    border: 10px solid #53fffc;
+  .orion1 {
+    left: 0;
+  }
+
+  .orion2 {
+    // 50 months
+    left: calc(100% * 50/187);
+  }
+
+  .orion3 {
+    // 66 months (50 months + 16 months)
+    left: calc(100% * 66/187);
+  }
+
+  .tribe1 {
+    // 84 months (66 months + 18 months)
+    left: calc(100% * 84/187);
+  }
+
+  .jc1 {
+    // 89 months (84 months + 5 months)
+    left: calc(100% * 89/187);
+  }
+
+  .jc2 {
+    // 115 months (89 months + 26 months)
+    left: calc(100% * 115/187);
+  }
+
+  .g2a1 {
+    // 124 months (115 months + 9 months)
+    left: calc(100% * 124/187);
+  }
+
+  .g2a2 {
+    // 130 months (124 months + 6 months)
+    left: calc(100% * 130/187);
+  }
+
+  .mpowered1 {
+    // 139 months (130 months + 9 months)
+    left: calc(100% * 139/187);
+  }
+
+  .siyavula1 {
+    // 158 months (139 months + 19 months)
+    left: calc(100% * 158/187);
+  }
+
+  .siyavula2 {
+    // 171 months (158 months + 13 months)
+    left: calc(100% * 171/187);
+  }
+
+  .siyavula3 {
+    // 184 months (171 months + 13 months)
+    left: calc(100% * 184/187);
+  }
+
+  .next {
+    // 187 months (184 months + 3 months)
+    left: 100%;
+  }
+
+  .big-milestone,
+  .small-milestone {
+    border: 3px solid #53fffc;
     border-radius: 50%;
+    height: 15px;
     position: absolute;
     top: -8px;
+    width: 15px;
     z-index: 20;
+  }
+
+  .big-milestone {
+    background-color: #f00;
   }
 
   .small-milestone {
     background-color: #53fffc;
-    height: 15px;
-    position: absolute;
-    top: -5px;
-    width: 2px;
-    z-index: 20;
   }
+}
+
+.timeline-labels {
+  margin-left: 8px;
+  margin-top: 20px;
+  overflow: visible;
+  width: 98%;
+
+  .employer {
+    border-right: 3px solid #53fffc;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .employer:first-child {
+    border-left: 3px solid #53fffc;
+  }
+
+  .employer:last-child {
+    border-right: 0;
+  }
+
+  .orion {
+    width: calc(100% * 84/187);
+  }
+
+  .tribe {
+    width: calc(100% * 5/187);
+  }
+
+  .jobcrystal {
+    width: calc(100% * 35/187 - 4px);
+  }
+
+  .go2africa {
+    width: calc(100% * 15/187 - 4px);
+  }
+
+  .mpowered {
+    width: calc(100% * 19/187 - 6px);
+  }
+
+  .siyavula {
+    width: calc(100% * 28/187 - 8px);
+  }
+}
+
+.skills-container {
+  h3 {
+    background-color: #53fffc;
+    color: #000;
+    display: inline-block;
+    height: 30px;
+    margin: 0 0 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  li {
+    width: 400px;
+  }
+}
+
+.skills {
+  border: 1px solid #53fffc;
+  display: inline-block;
+  padding: 10px;
+  // transform: rotate(-90deg);
+  // transform-origin: left top 0;
+
+  li {
+    // display: inline-block;
+    // height: 200px;
+
+    label {
+      display: inline-block;
+      width: 150px;
+    }
+  }
+
+  .bar-container {
+    display: inline-block;
+    height: 20px;
+    width: 200px;
+  }
+
+  .bar {
+    height: 100%;
+  }
+
+  .skill-level-4 .bar {
+    background-color: #ff1f39;
+    width: 100%;
+  }
+
+  .skill-level-3 .bar {
+    background-color: #ff9519;
+    width: 75%;
+  }
+
+  .skill-level-2 .bar {
+    background-color: #f7ff1f;
+    width: 50%;
+  }
+
+  .skill-level-1 .bar {
+    background-color: #efffe0;
+    width: 25%;
+  }
+}
+
+.job {
+  display: none;
+}
+
+.education {
+  display: none;
+}
+
+.job-container {
+  height: 400px;
+  width: 30%;
+}
+
+h3,
+h4 {
+  margin: 1em 0 .5em;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+.work-location,
+.time-frame {
+  font-size: 90%;
+  font-style: italic;
+}
+
+.skills-graphs {
+  width: 66%;
 }

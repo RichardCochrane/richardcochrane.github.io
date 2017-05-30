@@ -169,25 +169,28 @@ ul {
 .skills-container {
   h3 {
     background-color: #53fffc;
+    border: 1px solid #53fffc;
     color: #000;
     display: inline-block;
     height: 30px;
+    left: 0;
     margin: 0 0 20px;
+    position: absolute;
     text-align: center;
-    width: 100%;
-  }
-
-  li {
-    width: 400px;
+    top: 280px;
+    width: 120px;
   }
 }
 
 .skills {
   border: 1px solid #53fffc;
   display: inline-block;
+  height: 100px;
   padding: 10px;
-  // transform: rotate(-90deg);
-  // transform-origin: left top 0;
+  position: relative;
+  top: 280px;
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
 
   li {
     // display: inline-block;
@@ -201,8 +204,8 @@ ul {
 
   .bar-container {
     display: inline-block;
-    height: 20px;
-    width: 200px;
+    height: 15px;
+    width: 100px;
   }
 
   .bar {
@@ -259,5 +262,11 @@ h4 {
 }
 
 .skills-graphs {
+  height: 400px;
   width: 66%;
+}
+
+.skills-group {
+  height: 300px;
+  position: relative;
 }

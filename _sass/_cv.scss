@@ -1,24 +1,40 @@
 body {
   background: #444;
   color: #53fffc;
-  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  padding: 0;
 }
 
-section {
-  border: 2px solid #53fffc;
+h2 {
+  clear: both;
+  display: block;
+}
+
+section,
+.main,
+.misc-details {
   box-sizing: border-box;
-  display: inline-block;
-  margin: 0 20px 20px 0;
-  padding: 5px 10px;
-  vertical-align: top;
-  width: 40%;
+  flex: 0 0 50%;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  .box {
+    border: 2px solid #53fffc;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px 10px;
+  }
 }
 
 .full-width {
-  width: 100%;
+  flex: 0 0 100%;
 }
 
 .timeline-container {
+  flex: 0 0 100%;
   padding: 5px 10px;
 }
 
@@ -127,30 +143,25 @@ ul {
   width: 98%;
 
   .employer {
-    border-right: 3px solid #53fffc;
+    background-color: #f8ff34;
+    border: 0;
     box-sizing: border-box;
+    color: #444;
     display: inline-block;
     text-align: center;
   }
 
-  .employer:first-child {
-    border-left: 3px solid #53fffc;
-  }
-
-  .employer:last-child {
-    border-right: 0;
-  }
-
+  // Slight fidgeting of the data to give Tribe a little more space
   .orion {
-    width: calc(100% * 84/187);
+    width: calc(100% * 82/187);                // Should be: calc(100% * 84/187)
   }
 
   .tribe {
-    width: calc(100% * 5/187);
+    width: calc(100% * 8/187);                 // Should be: calc(100% * 5/187)
   }
 
   .jobcrystal {
-    width: calc(100% * 35/187 - 4px);
+    width: calc(100% * 34/187 - 4px);          // Should be: calc(100% * 35/187)
   }
 
   .go2africa {
@@ -162,18 +173,22 @@ ul {
   }
 
   .siyavula {
-    width: calc(100% * 28/187 - 8px);
+    width: calc(100% * 28/187 - 4px);
   }
 }
 
 .skills-container {
+  position: relative;
+
   h3 {
     background-color: #53fffc;
     border: 1px solid #53fffc;
     color: #000;
     display: inline-block;
-    height: 30px;
+    font-size: 90%;
+    height: 45px;
     left: 0;
+    line-height: 1.5em;
     margin: 0 0 20px;
     position: absolute;
     text-align: center;
@@ -198,7 +213,8 @@ ul {
 
     label {
       display: inline-block;
-      width: 150px;
+      vertical-align: top;
+      width: 128px;
     }
   }
 
@@ -206,10 +222,6 @@ ul {
     display: inline-block;
     height: 15px;
     width: 100px;
-  }
-
-  .bar {
-    height: 100%;
   }
 
   .skill-level-4 .bar {
@@ -231,6 +243,15 @@ ul {
     background-color: #efffe0;
     width: 25%;
   }
+
+  .bar {
+    height: 100%;
+    overflow: hidden;
+
+    &.dampen {
+      background-color: #444;
+    }
+  }
 }
 
 .job {
@@ -242,8 +263,10 @@ ul {
 }
 
 .job-container {
+  box-sizing: border-box;
+  flex: 0 0 30%;
   height: 400px;
-  width: 30%;
+  padding: 10px 20px 10px 10px;
 }
 
 h3,
@@ -262,11 +285,151 @@ h4 {
 }
 
 .skills-graphs {
+  flex: 0 0 70%;
   height: 400px;
-  width: 66%;
 }
 
 .skills-group {
   height: 300px;
-  position: relative;
+  position: absolute;
+
+  &.skills3 {
+    .skills {
+      height: 75px;
+    }
+
+    h3 {
+      width: 95px;
+    }
+  }
+
+  &.skills6 {
+    .skills {
+      height: 155px;
+    }
+
+    h3 {
+      width: 175px;
+    }
+  }
+
+  &.skills7 {
+    .skills {
+      height: 175px;
+    }
+
+    h3 {
+      width: 195px;
+    }
+  }
+
+  &.skills8 {
+    .skills {
+      height: 205px;
+    }
+
+    h3 {
+      width: 225px;
+    }
+  }
+
+  &.databases {
+    left: 0;
+  }
+
+  &.languages {
+    left: 121px;
+  }
+
+  &.full-stack {
+    left: 242px;
+  }
+
+  &.methodologies {
+    left: 438px;
+  }
+
+  &.source-control {
+    left: 534px;
+  }
+
+  &.operations {
+    left: 630px;
+    width: 277px;
+  }
+
+  &.other {
+    left: 726px;
+    width: 277px;
+  }
+}
+
+section {
+  header,
+  footer {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  section div {
+    border-left: 1px solid #53fffc;
+    border-right: 1px solid #53fffc;
+    display: none;
+    overflow: hidden;
+    padding: 10px;
+
+    h2 {
+      border-bottom: 1px solid #53fffc;
+      font-size: 1em;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    p {
+      margin: 0 0 5px;
+    }
+
+    li {
+      margin-top: 10px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  header {
+    background: #53fffc;
+    color: #444;
+    padding-left: 10px;
+  }
+
+  footer {
+    height: 5px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    &:after {
+      background: #53fffc;
+      bottom: -10px;
+      content: '';
+      height: 250px;
+      position: absolute;
+      right: -502%;
+      transform: rotate(-45deg);
+      transform-origin: 54% 100%;
+      width: 1100%;
+      z-index: -1;
+    }
+  }
+}
+
+.main {
+  flex: 0 0 40%;
+}
+
+.misc-details {
+  flex: 0 0 60%;
 }

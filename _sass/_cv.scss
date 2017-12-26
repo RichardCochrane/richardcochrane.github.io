@@ -1,6 +1,10 @@
+$primary-color: #53fffc;
+$secondary-color: #ff9519;
+$links-color: #ff1f39;
+
 body {
-  background: #444;
-  color: #53fffc;
+  background-color: #000;
+  color: $primary-color;
   display: flex;
   flex-flow: row wrap;
   margin: 0;
@@ -21,11 +25,29 @@ section,
   padding: 10px;
 
   .box {
-    border: 2px solid #53fffc;
+    background-color: #333;
+    border: 2px solid $primary-color;
     box-sizing: border-box;
     display: flex;
     flex-flow: row wrap;
     padding: 5px 10px;
+  }
+}
+
+.misc-details {
+  flex: 0 0 60%;
+
+  li {
+    box-shadow: 1px 1px 5px #fff;
+    padding: 10px;
+
+    h2 {
+      color: $secondary-color;
+    }
+  }
+
+  a {
+    color: $links-color;
   }
 }
 
@@ -34,6 +56,7 @@ section,
 }
 
 .timeline-container {
+  display: none;
   flex: 0 0 100%;
   padding: 5px 10px;
 }
@@ -45,7 +68,7 @@ ul {
 }
 
 .timeline {
-  background-color: #53fffc;
+  background-color: $primary-color;
   height: 5px;
   overflow: visible;
   position: relative;
@@ -118,7 +141,7 @@ ul {
 
   .big-milestone,
   .small-milestone {
-    border: 3px solid #53fffc;
+    border: 3px solid $primary-color;
     border-radius: 50%;
     height: 15px;
     position: absolute;
@@ -132,7 +155,7 @@ ul {
   }
 
   .small-milestone {
-    background-color: #53fffc;
+    background-color: $primary-color;
   }
 }
 
@@ -181,8 +204,8 @@ ul {
   position: relative;
 
   h3 {
-    background-color: #53fffc;
-    border: 1px solid #53fffc;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
     color: #000;
     display: inline-block;
     font-size: 90%;
@@ -198,7 +221,7 @@ ul {
 }
 
 .skills {
-  border: 1px solid #53fffc;
+  border: 1px solid $primary-color;
   display: inline-block;
   height: 100px;
   padding: 10px;
@@ -275,7 +298,8 @@ h4 {
 }
 
 h4 {
-  text-decoration: underline;
+  color: #ff9519;
+  // text-decoration: underline;
 }
 
 .work-location,
@@ -285,6 +309,7 @@ h4 {
 }
 
 .skills-graphs {
+  display: none;
   flex: 0 0 70%;
   height: 400px;
 }
@@ -292,6 +317,7 @@ h4 {
 .skills-group {
   height: 300px;
   position: absolute;
+  width: 277px;
 
   &.skills3 {
     .skills {
@@ -355,12 +381,10 @@ h4 {
 
   &.operations {
     left: 630px;
-    width: 277px;
   }
 
   &.other {
     left: 726px;
-    width: 277px;
   }
 }
 
@@ -372,14 +396,14 @@ section {
   }
 
   section div {
-    border-left: 1px solid #53fffc;
-    border-right: 1px solid #53fffc;
+    border-bottom: 1px solid $primary-color;
+    border-left: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
     display: none;
     overflow: hidden;
     padding: 10px;
 
     h2 {
-      border-bottom: 1px solid #53fffc;
       font-size: 1em;
       margin-top: 0;
       width: 100%;
@@ -390,7 +414,7 @@ section {
     }
 
     li {
-      margin-top: 10px;
+      margin-top: 15px;
 
       &:first-child {
         margin-top: 0;
@@ -399,7 +423,7 @@ section {
   }
 
   header {
-    background: #53fffc;
+    background: $primary-color;
     color: #444;
     padding-left: 10px;
   }
@@ -412,7 +436,7 @@ section {
     text-align: center;
 
     &:after {
-      background: #53fffc;
+      background: $primary-color;
       bottom: -10px;
       content: '';
       height: 250px;
@@ -430,6 +454,14 @@ section {
   flex: 0 0 40%;
 }
 
-.misc-details {
-  flex: 0 0 60%;
+@media screen and (min-width: 1225px) {
+  .timeline-container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .skills-graphs {
+    display: block;
+  }
 }
